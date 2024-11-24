@@ -3,7 +3,7 @@ import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
 import "../Dashboard/Dashboard.css";
 import StockWidget from "./StockWidget.js";
 
-const EquitiesDash = () => {
+const EquitiesDashboard = () => {
     const allTickers = sampleStockWidgetData.map(stock => stock.ticker);
     console.log(allTickers)
     return (
@@ -15,7 +15,4 @@ const EquitiesDash = () => {
       );
 }
 
-export default EquitiesDash; 
-
-
-
+export default EquitiesDashboard; 
