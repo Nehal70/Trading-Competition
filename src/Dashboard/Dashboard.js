@@ -3,6 +3,7 @@ import "./Dashboard.css";
 import StockWidget from "../widgets/StockWidget.js"
 import KeyInput from "../widgets/KeyInput.js"
 import EquitiesDashboard from "../widgets/EquityDashboard.js" 
+import Contestdash from "../widgets/Contestdash.js"
 
 const Dashboard = () => {
 
@@ -24,7 +25,7 @@ const Dashboard = () => {
     return (
       <div className="dashboard">
             <div className="widget user-info">
-                User Info
+                User Authentication
                 {!isSubmitted && <KeyInput onSubmit={handleInputSubmit} />} {/* Conditionally render input */}
                 <p>{message}</p> {/* Display message based on the match */}
             </div>
@@ -35,7 +36,9 @@ const Dashboard = () => {
             </div>
             <div className="widget order-book">Order Book</div>
             <div className="widget position-info">Position Information</div>
-            <div className="widget contest-info">Contest Information</div>
+            <div className="widget contest-info">Contest Information
+              <Contestdash/>
+            </div>
             <div className="widget total-pnl">Total PNL</div>
             <div className="widget recent-orders">Recent Orders</div>
       </div>

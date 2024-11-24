@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import "./KeyInput.css"
 
 const KeyInput = ({ onSubmit }) => {
     const [text, setText] = useState(""); // Store input value
@@ -15,12 +16,12 @@ const KeyInput = ({ onSubmit }) => {
     };
   
     return (
-      <div>
+      <div className = "API-Auth">
         <input 
           type="text" 
           value={text} 
           onChange={handleChange} 
-          placeholder="Enter a number" 
+          placeholder="Your API Authentication Key" 
         />
         <button onClick={handleSubmit}>Submit</button>
       </div>
