@@ -10,19 +10,20 @@ const StockWidget = ({ ticker }) => {
   }
 
   const { price, percentageChange, change } = stock;
-  const isPositive = percentageChange.includes("+");
+  const isPositivePercent = percentageChange.includes("+");
+  const isPositiveDollar = change.includes("+");
 
   return (
     <div className="stock-widget">
       <div className="stock-header">
         <span className="ticker">{stock.ticker}</span>
-        <span className={`percentage-change ${isPositive ? "positive" : "negative"}`}>
+        <span className={`percentage-change ${isPositivePercent ? "positive" : "negative"}`}>
           {percentageChange}
         </span>
       </div>
       <div className="stock-details">
         <span className="price">{price}</span>
-        <span className="dollar-change">({change})</span>
+        <span className={`percentage-change ${isPositiveDollar ? "positive" : "negative"}`}> ({change})</span>
       </div>
     </div>
   );
