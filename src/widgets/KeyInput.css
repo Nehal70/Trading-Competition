@@ -4,14 +4,10 @@
     flex-direction: column; /* Stack input and button vertically */
     align-items: center; /* Center align both elements */
     justify-content: center; /* Center them within the container */
-    padding: 20px; /* Space inside the box */
-    width: 300px; /* Fixed width for the component */
-    margin: 20px auto; /* Center horizontally with margin */
   }
   
   .API-Auth input {
     width: 90%; /* Input spans most of the container */
-    padding: 10px; /* Space inside the input */
     margin-bottom: 15px; /* Space between input and button */
     border: 1px solid #444; /* Border with dark grey color */
     border-radius: 5px; /* Rounded corners for input */
@@ -28,12 +24,11 @@
   
   .API-Auth button {
     width: 50%; /* Button takes half the container width */
-    padding: 10px; /* Space inside the button */
     border: none; /* Remove default border */
     border-radius: 5px; /* Rounded corners for button */
     background-color: #444; /* Dark grey background */
     color: white; /* White text */
-    font-size: 16px; /* Readable font size */
+    font-size: 12px; /* Readable font size */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease; /* Smooth hover effect */
   }
