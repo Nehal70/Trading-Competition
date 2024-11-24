@@ -9,7 +9,7 @@ const StockWidget = ({ ticker }) => {
     return <div>Stock not found</div>; 
   }
 
-  const { price, percentageChange, dollarChange } = stock;
+  const { price, percentageChange, change } = stock;
   const isPositive = percentageChange.includes("+");
 
   return (
@@ -22,7 +22,7 @@ const StockWidget = ({ ticker }) => {
       </div>
       <div className="stock-details">
         <span className="price">{price}</span>
-        <span className="dollar-change">({dollarChange})</span>
+        <span className="dollar-change">({change})</span>
       </div>
     </div>
   );
