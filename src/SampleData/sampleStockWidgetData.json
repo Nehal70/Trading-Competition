@@ -28,6 +28,36 @@
       "price": 2789.24,
       "change": "+50.18",
       "percentageChange": "+1.83%"
-    }
+    }, 
+    {
+      "ticker": "MSFT",
+      "price": 328.12,
+      "change": "+4.56",
+      "percentageChange": "+1.41%"
+    },
+    {
+      "ticker": "META",
+      "price": 342.88,
+      "change": "-8.22",
+      "percentageChange": "-2.34%"
+    },
+    {
+      "ticker": "NFLX",
+      "price": 415.77,
+      "change": "+12.11",
+      "percentageChange": "+3.00%"
+    },
+    {
+      "ticker": "ADBE",
+      "price": 567.89,
+      "change": "-15.46",
+      "percentageChange": "-2.65%"
+    },
+    {
+      "ticker": "ORCL",
+      "price": 101.45,
+      "change": "+1.78",
+      "percentageChange": "+1.79%"
+    }    
   ]
   

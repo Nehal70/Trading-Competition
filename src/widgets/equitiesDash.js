@@ -1,6 +1,7 @@
 import React from 'react'
 import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
-import "../Dashboard.css";
+import "../Dashboard/Dashboard.css";
+import StockWidget from "./StockWidget.js";
 
 
 
