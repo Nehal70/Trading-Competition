@@ -1,25 +1,24 @@
 /* For the entire scroll bar */
 ::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
-  background-color: black; /* Background color of the scrollbar track */
+  width: 8px; 
+  background-color: black; 
 }
 
 /* For the scrollbar track */
 ::-webkit-scrollbar-track {
-  background: black; /* Background of the scrollbar track */
-  border-radius: 10px; /* Rounded edges for the scrollbar track */
+  background: rgb(36, 36, 36); /* Background of the scrollbar track */
+  /*border-radius: 10px;  Rounded edges for the scrollbar track */
 }
 
 /* For the scrollbar thumb (scrolling handle) */
 ::-webkit-scrollbar-thumb {
-  background-color: #000; /* Black scrollbar thumb */
-  border-radius: 10px; /* Rounded edges for the scrollbar thumb */
-  border: 2px solid #000; /* Creates spacing between the thumb and track */
+  background-color: #444; /* Black scrollbar thumb */
+  /*border-radius: ; Rounded edges for the scrollbar thumb */ 
 }
 
 /* For scrollbar on hover (optional) */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #444; /* Slightly lighter black when hovered */
+  background-color: black; /* Slightly lighter black when hovered */
 }
 
 .dashboard {
