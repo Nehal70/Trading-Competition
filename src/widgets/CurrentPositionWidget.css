@@ -1,0 +1,42 @@
+.position-widget {
+    width: calc(100%);             
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+.ticker {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+  }
+
+.position-table th,
+.position-table td {
+      margin: 0; /* Remove margin, if any, from table cells */
+      text-align: left; /* Default text alignment for both header and data */
+      border: none; /* Optional: remove default border styling */
+  }
+
+
+.position-table {
+    padding-left: 0;
+    margin: 0;
+}
+
+.pnL-positive {
+    color: green;
+    font-weight: bold;
+}
+
+/* Negative PnL - Red */
+.pnL-negative {
+    color: red;
+    font-weight: bold;
+}
