@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./Dashboard.css";
 import StockWidget from "../widgets/StockWidget.js"
 import KeyInput from "../widgets/KeyInput.js"
-import EquitiesDashboard from "../widgets/EquitiesDashboard.js" 
+import EquitiesDashboard from "../widgets/EquityDashboard.js" 
 
 const Dashboard = () => {
 
