@@ -7,6 +7,7 @@ import StockWidget from "./StockWidget.js";
 
 const equitiesDash = () => {
     const allTickers = sampleStockWidgetData.map(stock => stock.ticker);
+    
     return (
         <div className="widget equities">
           {allTickers.map(ticker=> (
