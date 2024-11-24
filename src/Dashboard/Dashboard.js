@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./Dashboard.css";
 import StockWidget from "../widgets/StockWidget.js"
 import KeyInput from "../widgets/KeyInput.js"
-import equitiesDash from "../widgets/equitiesDash.js"
+import EquitiesDash from "../widgets/EquitiesDash.js" 
 
 const Dashboard = () => {
 
@@ -32,7 +32,7 @@ const Dashboard = () => {
             <div className="widget chart">Chart</div>
             <div className="widget current-stock">Current Stock: AAPL</div>
             <div className="widget equities">
-              <equitiesDash />
+              <EquitiesDash />
             </div>
             <div className="widget order-book">Order Book</div>
             <div className="widget position-info">Position Information</div>
