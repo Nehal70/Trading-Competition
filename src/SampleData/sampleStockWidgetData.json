@@ -1,0 +1,33 @@
+[
+    {
+      "ticker": "NVDA",
+      "price": 145.58,
+      "change": "+2.38",
+      "percentageChange": "+1.05%"
+    },
+    {
+      "ticker": "AMZN",
+      "price": 190.66,
+      "change": "-3.67",
+      "percentageChange": "-2.03%"
+    },
+    {
+      "ticker": "AAPL",
+      "price": 239.65,
+      "change": "+10.48",
+      "percentageChange": "+3.69%"
+    },
+    {
+      "ticker": "TSLA",
+      "price": 122.77,
+      "change": "-3.14",
+      "percentageChange": "-2.49%"
+    },
+    {
+      "ticker": "GOOGL",
+      "price": 2789.24,
+      "change": "+50.18",
+      "percentageChange": "+1.83%"
+    }
+  ]
+  

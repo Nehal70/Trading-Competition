@@ -1,0 +1,80 @@
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+        "user-info chart current-stock"
+        "equities chart order-book"
+        "equities chart order-book"
+        "equities position-info order-book"
+        "contest-info total-pnl recent-orders"
+        "contest-info total-pnl recent-orders";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    height: calc(100vh - 20px); 
+}
+
+.widget {
+    background-color: #242323; /* Dark grey background */
+    color: white; /* White text color */
+    border: 1px solid #000; /* Black border */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/**
+row
+**/
+.user-info {
+grid-area: "user-info";
+grid-row: span 1; 
+}
+
+.chart {
+grid-area: "chart";
+grid-row: span 3;
+}
+
+.current-stock {
+grid-area: "current-stock";
+grid-row: span 1;
+}
+/**
+row
+**/
+.equities {
+    grid-area: "equities";
+    grid-row: span 3;
+    display: grid; 
+    gap: 5px; 
+    padding: 10px; 
+}
+
+  .position-info {
+    grid-area: "position-info";
+    grid-row: span 1;
+  }
+
+  .order-book {
+    grid-area: "order-book";
+    grid-row: span 3;
+  }
+/**
+row
+**/
+  .contest-info {
+    grid-area: "contest-info";
+    grid-row: span 2;
+  }
+
+  .total-pnl {
+    grid-area: "total-pnl";
+    grid-row: span 2; 
+  }
+
+  .recent-orders {
+    grid-area: "recent-orders";
+    grid-row: span 2; 
+  }
+

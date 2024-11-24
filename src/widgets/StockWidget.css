@@ -1,0 +1,54 @@
+/* stock-widget CSS styles */
+.stock-widget {
+    width: calc(100%);             
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  
+  .stock-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .ticker {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .percentage-change {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .percentage-change.positive {
+    color: #2e8b57;
+  }
+  
+  .percentage-change.negative {
+    color: #b22222;
+  }
+  
+  .stock-details {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .price {
+    font-weight: bold;
+  }
+  
+  .dollar-change {
+    color: #555;
+  }
+  
