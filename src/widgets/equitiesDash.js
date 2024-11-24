@@ -9,9 +9,11 @@ const equitiesDash = () => {
     const allTickers = sampleStockWidgetData.map(stock => stock.ticker);
     return (
         <div className="widget equities">
-          {allTickers.map(stock => (
-            <StockWidget ticker={stock.ticker} />
+          {allTickers.map(ticker=> (
+            <StockWidget ticker={ticker} />
           ))}
         </div>
       );
 }
+
+export default equitiesDash;
