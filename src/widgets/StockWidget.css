@@ -37,15 +37,28 @@
   .percentage-change.negative {
     color: #b22222;
   }
+
+  .dollar-change {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .dollar-change.positive {
+    color: #2e8b57;
+  }
+  
+  .dollar-change.negative {
+    color: #b22222;
+  }
   
   .stock-details {
     margin-top: 5px;
     font-size: 14px;
-    color: #555;
   }
   
   .price {
     font-weight: bold;
+    color: #555;
   }
   
   .dollar-change {

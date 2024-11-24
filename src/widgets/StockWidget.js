@@ -23,7 +23,7 @@ const StockWidget = ({ ticker }) => {
       </div>
       <div className="stock-details">
         <span className="price">{price}</span>
-        <span className={`percentage-change ${isPositiveDollar ? "positive" : "negative"}`}> ({change})</span>
+        <span className={`dollar-change ${isPositiveDollar ? "positive" : "negative"}`}> ({change})</span>
       </div>
     </div>
   );
