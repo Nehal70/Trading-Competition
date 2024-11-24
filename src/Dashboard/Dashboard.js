@@ -3,6 +3,7 @@ import "./Dashboard.css";
 import StockWidget from "../widgets/StockWidget.js"
 import KeyInput from "../widgets/KeyInput.js"
 import EquitiesDashboard from "../widgets/EquityDashboard.js" 
+import CurrentPositionWidget from "../widgets/CurrentPositionWidget.js";
 
 const Dashboard = () => {
 
@@ -34,7 +35,9 @@ const Dashboard = () => {
               <EquitiesDashboard />
             </div>
             <div className="widget order-book">Order Book</div>
-            <div className="widget position-info">Position Information</div>
+            <div className="widget position-info">
+              <CurrentPositionWidget />
+            </div>
             <div className="widget contest-info">Contest Information</div>
             <div className="widget total-pnl">Total PNL</div>
             <div className="widget recent-orders">Recent Orders</div>
