@@ -2,10 +2,12 @@ import React, {useState} from "react";
 import "./Dashboard.css";
 import StockWidget from "../widgets/StockWidget.js"
 import KeyInput from "../widgets/KeyInput.js"
+import EquityDashboard from "../widgets/EquityDashboard.js" 
+import ChartWidget from '../widgets/ChartWidget.js';
 import EquitiesDashboard from "../widgets/EquityDashboard.js" 
 
 const Dashboard = () => {
-
+    
     const [text, setText] = useState(""); // Store input value
     const [message, setMessage] = useState(""); // Store message to display
     const predefinedNumber = "12345"; // The number to match with
@@ -28,10 +30,10 @@ const Dashboard = () => {
                 {!isSubmitted && <KeyInput onSubmit={handleInputSubmit} />} {/* Conditionally render input */}
                 <p>{message}</p> {/* Display message based on the match */}
             </div>
-            <div className="widget chart">Chart</div>
+            <div className="widget chart"><ChartWidget/></div>
             <div className="widget current-stock">Current Stock: AAPL</div>
             <div className="widget equities">
-              <EquitiesDashboard />
+              <EquityDashboard />
             </div>
             <div className="widget order-book">Order Book</div>
             <div className="widget position-info">Position Information</div>
