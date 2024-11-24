@@ -253,14 +253,30 @@ const ChartWidget = () => {
         },
         title: {
         text: 'CandleStick Chart',
-        align: 'left'
+        align: 'left',
+        style: {
+            fontWeight: 'bold',
+            color: '#FFFFFF',
+        }
         },
         xaxis: {
-        type: 'datetime'
+        type: 'datetime',
+        labels: {
+            style: {
+                fontWeight: 'bold',
+                colors: '#FFFFFF',
+            }
+        }
         },
         yaxis: {
         tooltip: {
             enabled: true,
+        },
+        labels: {
+            style: {
+                fontWeight: 'bold',
+                colors: '#FFFFFF',
+            }
         }
         }
     }
