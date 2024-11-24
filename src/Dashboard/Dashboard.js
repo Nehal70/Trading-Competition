@@ -12,8 +12,7 @@ const Dashboard = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleInputSubmit = (data) => {
-    setText(data); // Save the input value from KeyInput
-    // Check if the input matches the predefined number
+    setText(data); 
     if (data === predefinedNumber) {
       setMessage("John Doe | GATech | #001");
     } else {
