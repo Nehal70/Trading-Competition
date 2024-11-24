@@ -7,9 +7,9 @@ const EquitiesDashboard = () => {
     const allTickers = sampleStockWidgetData.map(stock => stock.ticker);
     return (
         <>
-          {allTickers.map(stock => (
+         {allTickers.map(stock => (
             <StockWidget ticker={stock} />
-          ))}
+          ))}   
         </>
       );
 }
