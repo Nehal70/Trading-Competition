@@ -22,9 +22,9 @@ const PnLDashBoard = () => {
   
         // Calculate PnL based on whether the trade is a buy or sell
         if (trade.is_buy) { // checks if trqde is a buy , the pnl is calculated by subracting trade price from market price
-          pnl = (trade.price - marketPrice) * trade.quantity;
-        } else if (trade.is_sell) { // checks if trade is a sell, the pnl is calculated by subracting market price from trade price
           pnl = (marketPrice - trade.price) * trade.quantity;
+        } else if (trade.is_sell) { // checks if trade is a sell, the pnl is calculated by subracting market price from trade price
+          pnl = (trade.price - marketPrice) * trade.quantity;
         }
         
   
