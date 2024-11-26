@@ -3,20 +3,28 @@ import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
 import samplePnlData from "../SampleData/samplePnlData.json";
 import "./CurrentPositionWidget.css";
 
-const CurrentPositionWidget = () => {
-    const [currentStock, setCurrentStock] = useState("NVDA");
-    const stock = sampleStockWidgetData.find(stock => stock.ticker === currentStock);
-    const stockPosition = samplePnlData.find(position => position.ticker === currentStock);
+const CurrentPositionWidget = ({ selectedStock }) => {
+    const stock = sampleStockWidgetData.find(stock => stock.ticker === selectedStock);
+    const stockPosition = samplePnlData.find(position => position.ticker === selectedStock);
 
-    const currentPrice = stock.price;
-    const buyPrice = stockPosition.price;
-    const quantity = stockPosition.quantity * (stockPosition.is_sell == true ? -1 : 1);
-    const totalGainLoss = ((currentPrice - buyPrice) * quantity).toFixed(2); // Calculate total gain/loss and round to 2 decimal places
-    const pnlChange = totalGainLoss >= 0 ? 'pnL-positive' : 'pnL-negative';
+    let currentPrice = "N/A";
+    let buyPrice = "N/A";
+    let quantity = "N/A"
+    let totalGainLoss = "N/A"
+    let pnlChange = "N/A"
+
+    if (stock != null && stockPosition != null) {
+        console.log("if reached")
+        currentPrice = stock.price;
+        buyPrice = stockPosition.price;
+        quantity = stockPosition.quantity * (stockPosition.is_sell == true ? -1 : 1);
+        totalGainLoss = ((currentPrice - buyPrice) * quantity).toFixed(2); // Calculate total gain/loss and round to 2 decimal places
+        pnlChange = totalGainLoss >= 0 ? 'pnL-positive' : 'pnL-negative';
+    }
 
     return (
         <div className="position-widget">
-            <span className="ticker">{currentStock}</span>
+            <span className="ticker">{selectedStock != null ? selectedStock : "Select a Stock"}</span>
             <table className="position-table">
                 <tr>
                     <td>Current Price: </td>

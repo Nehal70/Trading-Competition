@@ -10,6 +10,8 @@ import Contestdash from "../widgets/Contestdash.js"
 
 const Dashboard = () => {
     
+
+    const [selectedStock, setSelectedStock] = useState(null);
     const [text, setText] = useState(""); // Store input value
     const [message, setMessage] = useState(""); // Store message to display
     const predefinedNumber = "12345"; // The number to match with
@@ -33,13 +35,13 @@ const Dashboard = () => {
                 <p>{message}</p> {/* Display message based on the match */}
             </div>
             <div className="widget chart"><ChartWidget/></div>
-            <div className="widget current-stock">Current Stock: AAPL</div>
+            <div className="widget current-stock">Current Stock: {selectedStock}</div>
             <div className="widget equities">
-              <EquityDashboard />
+              <EquityDashboard selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>
             </div>
             <div className="widget order-book">Order Book</div>
             <div className="widget position-info">
-              <CurrentPositionWidget />
+              <CurrentPositionWidget selectedStock={selectedStock}/>
             </div>
             <div className="widget contest-info">Contest Information
               <Contestdash/>

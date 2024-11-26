@@ -11,7 +11,13 @@
     justify-content: center;
     align-items: flex-start;
     box-sizing: border-box;
+    cursor: pointer;         /* Pointer on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
   }
+
+.stock-widget:hover {
+  background-color: #333333;
+}
   
   .stock-header {
     display: flex;
