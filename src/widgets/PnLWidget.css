@@ -66,3 +66,41 @@
       gap: 20px;
     }
   }
+
+  .total-pnl {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .positive {
+    color: green;
+  }
+  
+  .negative {
+    color: red;
+  }
+  
+  .pnl-dashboard {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .pnl-table {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
+  
+  .pnl-row {
+    display: contents;
+  }
+  
+  .pnl-row.header div {
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding: 5px 0;
+  }
+  
+  .pnl-row div {
+    padding: 5px 10px;
+  }
