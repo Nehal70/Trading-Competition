@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react'
 import PnLWidget from "./PnLWidget.css";
-import samplePnLData from "../SampleData/samplePnLData.json";
+import samplePnLData from "../SampleData/samplePnlData.json";
 import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
 
 const PnLDashBoard = () => {
@@ -36,18 +36,30 @@ const PnLDashBoard = () => {
     };
   // Calculate all PnL results
   const pnlData = calculatePnL();
+  const totalPnl = pnlData.reduce((total, trade) => total + parseFloat(trade.pnl), 0);
 
   return (
     <div className="pnl-dashboard">
       <h2>PnL Dashboard</h2>
-      <div className="pnl-table">
-        <div className="pnl-row header">
-          <div>Ticker</div>
-          <div>Action</div>
-          <div>Trade Price</div>
-          <div>Market Price</div>
-          <div>Quantity</div>
-          <div>PnL</div>
+  
+      {/* Display the Total PnL */}
+      <div className="total-pnl">
+        <strong>Total PnL: </strong>
+        <span className={totalPnl >= 0 ? "positive" : "negative"}>
+          ${totalPnl.toFixed(2)}
+        </span>
+      </div>
+  
+      {/* PnL Table */}
+      <div className = "pnl-table-container">
+        <div className="pnl-table">
+            <div className="pnl-row header">
+            <div>Ticker</div>
+            <div>Action</div>
+            <div>Trade Price</div>
+            <div>Market Price</div>
+            <div>Quantity</div>
+            <div>PnL</div>
         </div>
         {pnlData.map((trade, index) => {
           const marketData = sampleStockWidgetData.find(stock => stock.ticker === trade.ticker);
@@ -65,6 +77,7 @@ const PnLDashBoard = () => {
           );
         })}
       </div>
+    </div>
     </div>
   );
 };

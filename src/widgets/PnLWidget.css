@@ -1,106 +1,136 @@
 /* Container Styling */
 .pnl-widget {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000000; /* Light gray background */
-    padding: 20px 30px; /* Spacing for a clean look */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    font-family: 'Arial', sans-serif; /* Clean font */
-  }
-  
-  /* Header Section */
-  .pnl-widget .header {
-    font-size: 18px; /* Medium size for title */
-    font-weight: bold; /* Make the title stand out */
-    color: white; /* white text */
-    margin-bottom: 5px;
-  }
-  
-  .pnl-widget .last-updated {
-    font-size: 12px; /* Smaller font for timestamp */
-    color: white; /* white text */
-  }
-  
-  /* PnL Section */
-  .pnl-widget .pnl-section {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000; /* Light gray background */
+  padding: 20px 30px; /* Spacing for a clean look */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: 'Arial', sans-serif; /* Clean font */
+}
+ /* Header Section */
+.pnl-widget .header {
+  font-size: 18px; /* Medium size for title */
+  font-weight: bold; /* Make the title stand out */
+  color: white; /* white text */
+  margin-bottom: 5px;
+}
+ .pnl-widget .last-updated {
+  font-size: 12px; /* Smaller font for timestamp */
+  color: white; /* white text */
+}
+ /* PnL Section */
+.pnl-widget .pnl-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px; /* Spacing between rows */
+}
+ .pnl-widget .pnl-label {
+  font-size: 14px; /* Small label */
+  color: white; /* white */
+}
+ .pnl-widget .pnl-value {
+  font-size: 24px; /* Large font for value */
+  font-weight: bold; /* Make value prominent */
+  color: white; /* white text for numbers */
+}
+ /* Flex Sections for Left and Right */
+.pnl-widget .pnl-content {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+ .pnl-widget .pnl-item {
+  flex: 1; /* Equal spacing for items */
+  text-align: center; /* Center-align text */
+}
+ /* Responsive Design */
+@media (max-width: 600px) {
+  .pnl-widget {
     flex-direction: column;
     align-items: flex-start;
-    gap: 5px; /* Spacing between rows */
-  }
-  
-  .pnl-widget .pnl-label {
-    font-size: 14px; /* Small label */
-    color: white; /* white */
-  }
-  
-  .pnl-widget .pnl-value {
-    font-size: 24px; /* Large font for value */
-    font-weight: bold; /* Make value prominent */
-    color: white; /* white text for numbers */
-  }
-  
-  /* Flex Sections for Left and Right */
-  .pnl-widget .pnl-content {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-  }
-  
-  .pnl-widget .pnl-item {
-    flex: 1; /* Equal spacing for items */
-    text-align: center; /* Center-align text */
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    .pnl-widget {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .pnl-content {
-      flex-direction: column;
-      gap: 20px;
-    }
   }
 
-  .total-pnl {
-    margin-bottom: 20px;
-    font-size: 18px;
+
+   .pnl-content {
+    flex-direction: column;
+    gap: 20px;
   }
-  
-  .positive {
-    color: green;
-  }
-  
-  .negative {
-    color: red;
-  }
-  
+}
+
+
+.total-pnl {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+ .positive {
+  color: green;
+}
+ .negative {
+  color: red;
+}
+ .pnl-dashboard {
+  font-family: Arial, sans-serif;
+  margin: 20px auto; /* Center horizontally */
+  max-width: 90%; /* Constrain the dashboard width to fit the page */
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-sizing: border-box; /* Include padding and borders in width calculations */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+ .pnl-table {
+  width: 100%; /* Table takes full width of container */
+  min-width: 600px; /* Prevent table from shrinking too much */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+ .pnl-row {
+  display: contents;
+}
+ .pnl-row.header div {
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+  padding: 5px 0;
+}
+ .pnl-row div {
+  padding: 5px 10px;
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+  overflow: hidden;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+.pnl-table-container {
+  max-height: 300px; /* Limit vertical height */
+  overflow-y: auto; /* Vertical scrolling */
+  overflow-x: auto; /* Horizontal scrolling to prevent white space overflow */
+  border: 1px solid #ddd; /* Optional: Border for container */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px;
+  box-sizing: border-box; /* Include padding in size calculations */
+}
+ /* Optional Scrollbar Styling */
+.pnl-table-container::-webkit-scrollbar {
+  width: 8px;
+}
+ .pnl-table-container::-webkit-scrollbar-thumb {
+  background: #888; /* Scrollbar thumb color */
+  border-radius: 4px;
+}
+ .pnl-table-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker scrollbar on hover */
+}
+
+
+@media (max-width: 768px) {
   .pnl-dashboard {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    max-width: 100%; /* Allow full-width on smaller screens */
+    padding: 10px; /* Adjust padding for small devices */
   }
-  
-  .pnl-table {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
+   .pnl-table-container {
+    max-height: 200px; /* Reduce height for smaller screens */
   }
-  
-  .pnl-row {
-    display: contents;
-  }
-  
-  .pnl-row.header div {
-    font-weight: bold;
-    border-bottom: 2px solid #ddd;
-    padding: 5px 0;
-  }
-  
-  .pnl-row div {
-    padding: 5px 10px;
-  }
+}
