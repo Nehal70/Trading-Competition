@@ -47,7 +47,7 @@ const Dashboard = () => {
             <div className="widget contest-info">Contest Information
               <Contestdash/>
             </div>
-            <div className="widget total-pnl">Total PNL<PnLWidget/></div>
+            <div className="widget total-pnl"><PnLWidget/></div>
             <div className="widget recent-orders">Recent Orders</div>
       </div>
     );

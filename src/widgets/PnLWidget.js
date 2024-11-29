@@ -40,7 +40,6 @@ const PnLDashBoard = () => {
 
   return (
     <div className="pnl-dashboard">
-      <h2>PnL Dashboard</h2>
   
       {/* Display the Total PnL */}
       <div className="total-pnl">

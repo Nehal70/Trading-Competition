@@ -98,6 +98,7 @@ row
   .total-pnl {
     grid-area: "total-pnl";
     grid-row: span 2; 
+    margin-bottom: 0%;
   }
 
   .recent-orders {
