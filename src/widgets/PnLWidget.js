@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import PnLWidget from "./PnLWidget.css";
+import "./PnLWidget.css";
 import samplePnLData from "../SampleData/samplePnlData.json";
 import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
 
