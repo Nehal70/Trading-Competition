@@ -12,3 +12,4 @@ const PriceLevelWidget = ({ price, buyAmount, sellAmount }) => {
 };
 
 export default PriceLevelWidget;
+

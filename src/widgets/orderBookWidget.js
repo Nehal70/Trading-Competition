@@ -1,25 +1,23 @@
 import React, { useState } from "react";
-import PriceLevelWidget from "./PriceLevelWidget.js"; // Your single price-level component
-import "./OrderBookWidget.css"; // CSS for the widget
-import sampleOrderBookData from "../SampleData/SampleOrderBookData.json"; // Import the JSON file
+import PriceLevelWidget from "./PriceLevelWidget";
+import "./OrderBookWidget.css";
+import sampleOrderBookData from "../SampleData/sampleOrderBookData.json";
 
 const OrderBookWidget = () => {
-  const [selectedStock, setSelectedStock] = useState(Object.keys(sampleOrderBookData)[0]); // Default to the first stock
+  const [selectedStock, setSelectedStock] = useState(Object.keys(sampleOrderBookData)[0]);
 
   const handleStockChange = (event) => {
     setSelectedStock(event.target.value);
   };
+
+  const stockData = sampleOrderBookData[selectedStock] || [];
 
   return (
     <div className="order-book-widget">
       <h1>Order Book</h1>
 
       {/* Dropdown to select stock */}
-      <select
-        className="stock-selector"
-        value={selectedStock}
-        onChange={handleStockChange}
-      >
+      <select className="stock-selector" value={selectedStock} onChange={handleStockChange}>
         {Object.keys(sampleOrderBookData).map((ticker) => (
           <option key={ticker} value={ticker}>
             {ticker}
@@ -27,9 +25,16 @@ const OrderBookWidget = () => {
         ))}
       </select>
 
-      {/* Render price levels for the selected stock */}
+      {/* Header Row */}
+      <div className="price-level-header">
+        <span className="header price-header">Price</span>
+        <span className="header buy-header">Buy</span>
+        <span className="header sell-header">Sell</span>
+      </div>
+
+      {/* Render Price Levels */}
       <div className="price-levels">
-        {sampleOrderBookData[selectedStock].map((level, index) => (
+        {stockData.map((level, index) => (
           <PriceLevelWidget
             key={index}
             price={level.price}
@@ -43,3 +48,4 @@ const OrderBookWidget = () => {
 };
 
 export default OrderBookWidget;
+

@@ -1,4 +1,3 @@
-/* Price Level Row */
 .price-level-widget {
   display: flex;
   justify-content: space-between;
@@ -9,34 +8,22 @@
   color: #ffffff;
 }
 
-.price-level-widget:hover {
-  background-color: #222; /* Highlight row on hover */
-}
-
-/* Columns */
 .price-level-widget .price {
-  width: 33%;
+  flex: 1;
   text-align: left;
-  color: #d32f2f; /* Red for price */
+  color: #d32f2f;
 }
 
 .price-level-widget .buy-amount {
-  width: 33%;
+  flex: 1;
   text-align: center;
-  color: #29b6f6; /* Blue for buy amount */
+  color: #29b6f6;
 }
 
 .price-level-widget .sell-amount {
-  width: 33%;
+  flex: 1;
   text-align: right;
-  color: #f57c00; /* Orange for sell amount */
-}
-
-/* Header Row */
-.price-level-widget.header {
-  font-weight: bold;
-  background-color: #1e1e1e;
-  border-bottom: 2px solid #555;
+  color: #f57c00;
 }
 
   
