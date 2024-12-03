@@ -169,7 +169,7 @@ const BuyButton = ({ selectedStock }) => {
                             {/* Estimated Value or Shares Amt */}
                             {quantityType === "shares" && (
                                 <div>
-                                    <span>Estimated Value: ${orderType === "limit" ? quantity * limitPrice : quantity * stock.price}</span>
+                                    <span>Estimated Value: ${orderType === "limit" ? (quantity * limitPrice).toFixed(2) : (quantity * stock.price).toFixed(2)}</span>
                                 </div>
                             )}
                             {quantityType === "dollars" && (
