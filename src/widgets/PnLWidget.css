@@ -70,9 +70,10 @@
   color: red;
 }
  .pnl-dashboard {
+  height: 100%;
   font-family: Arial, sans-serif;
   max-width: 100%; /* Constrain the dashboard width to fit the page */
-  background-color: #1a1a1a;
+  background-color: #000000;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */

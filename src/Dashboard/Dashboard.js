@@ -10,6 +10,7 @@ import Contestdash from "../widgets/Contestdash.js"
 import PnLWidget from "../widgets/PnLWidget.js";
 import RecentOrdersWidget from "../widgets/RecentOrdersWidget.js";
 import samplePnlData from "../SampleData/samplePnlData.json";
+import BuyButton from "../widgets/BuyWidget.js";
 
 const Dashboard = () => {
     
@@ -46,7 +47,9 @@ const Dashboard = () => {
                 <p>{message}</p> {/* Display message based on the match */}
             </div>
             <div className="widget chart"><ChartWidget/></div>
-            <div className="widget current-stock">Current Stock: {selectedStock}</div>
+            <div className="widget current-stock">
+              <BuyButton selectedStock={selectedStock}></BuyButton>
+            </div>
             <div className="widget equities">
               <EquityDashboard selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>
             </div>
