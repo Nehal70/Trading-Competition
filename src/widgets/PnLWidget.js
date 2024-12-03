@@ -37,11 +37,9 @@ const PnLDashBoard = () => {
   // Calculate all PnL results
   const pnlData = calculatePnL();
   const totalPnl = pnlData.reduce((total, trade) => total + parseFloat(trade.pnl), 0);
-
   return (
     <div className="pnl-dashboard">
-  
-      {/* Display the Total PnL */}
+      {/* Display Total PnL */}
       <div className="total-pnl">
         <strong>Total PnL: </strong>
         <span className={totalPnl >= 0 ? "positive" : "negative"}>
@@ -50,35 +48,46 @@ const PnLDashBoard = () => {
       </div>
   
       {/* PnL Table */}
-      <div className = "pnl-table-container">
-        <div className="pnl-table">
-            <div className="pnl-row header">
-            <div>Ticker</div>
-            <div>Action</div>
-            <div>Trade Price</div>
-            <div>Market Price</div>
-            <div>Quantity</div>
-            <div>PnL</div>
-        </div>
-        {pnlData.map((trade, index) => {
-          const marketData = sampleStockWidgetData.find(stock => stock.ticker === trade.ticker);
-          return (
-            <div className="pnl-row" key={index}>
-              <div>{trade.ticker}</div>
-              <div>{trade.is_buy ? "Buy" : "Sell"}</div>
-              <div>${trade.price.toFixed(2)}</div>
-              <div>${marketData ? marketData.price.toFixed(2) : "N/A"}</div>
-              <div>{trade.quantity}</div>
-              <div className={trade.pnl >= 0 ? "positive" : "negative"}>
-                ${trade.pnl}
-              </div>
-            </div>
-          );
-        })}
+      <div className="pnl-table-container">
+        <table className="pnl-table">
+          {/* Table Header */}
+          <thead>
+            <tr className="header">
+              <th>Ticker</th>
+              <th>Action</th>
+              <th>Trade Price</th>
+              <th>Market Price</th>
+              <th>Quantity</th>
+              <th>PnL</th>
+            </tr>
+          </thead>
+  
+          {/* Table Body */}
+          <tbody>
+            {pnlData.map((trade, index) => {
+              const marketData = sampleStockWidgetData.find(
+                (stock) => stock.ticker === trade.ticker
+              );
+              return (
+                <tr key={index}>
+                  <td>{trade.ticker}</td>
+                  <td>{trade.is_buy ? "Buy" : "Sell"}</td>
+                  <td>${trade.price.toFixed(2)}</td>
+                  <td>${marketData ? marketData.price.toFixed(2) : "N/A"}</td>
+                  <td>{trade.quantity}</td>
+                  <td className={trade.pnl >= 0 ? "positive" : "negative"}>
+                    ${trade.pnl}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
-    </div>
   );
+  
+  
 };
 
 export default PnLDashBoard;
