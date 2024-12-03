@@ -1,0 +1,37 @@
+/* OrderBookLine.css */
+.orderbook-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    background-color: #1a1a1a; /* Background color */
+    color: #fff; /* Default text color */
+    border-bottom: 1px solid #333; /* Line separation */
+  }
+  
+  .orderbook-line .price {
+    color: #d32f2f; /* Red for price */
+    width: 20%; /* Adjust for alignment */
+  }
+  
+  .orderbook-line .size {
+    width: 20%; /* Adjust for spacing */
+    text-align: right;
+  }
+  
+  .orderbook-line .size.red {
+    color: #d32f2f; /* Red for specific sizes */
+  }
+  
+  .orderbook-line .size.green {
+    color: #29b6f6; /* Blue/Green for specific sizes */
+  }
+  
+  .orderbook-line .volume {
+    width: 20%;
+    text-align: right;
+    color: #9e9e9e; /* Gray for volume */
+  }
+  

@@ -11,6 +11,7 @@ import PnLWidget from "../widgets/PnLWidget.js";
 import RecentOrdersWidget from "../widgets/RecentOrdersWidget.js";
 import samplePnlData from "../SampleData/samplePnlData.json";
 import BuyButton from "../widgets/BuySellWidget.js";
+import OrderBookWidget from "../widgets/OrderBookWidget.js";
 
 const Dashboard = () => {
     
@@ -53,7 +54,7 @@ const Dashboard = () => {
             <div className="widget equities">
               <EquityDashboard selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>
             </div>
-            <div className="widget order-book">Order Book</div>
+            <div className="widget order-book">Order Book<OrderBookWidget/></div>
             <div className="widget position-info">
               <CurrentPositionWidget selectedStock={selectedStock}/>
             </div>
