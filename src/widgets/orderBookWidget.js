@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import PriceLevelWidget from "./PriceLevelWidget";
 import "./OrderBookWidget.css";
-import sampleOrderBookData from "../SampleData/sampleOrderBookData.json";
+import SampleOrderBookData from "../SampleData/SampleOrderBookData.json";
 
 const OrderBookWidget = () => {
-  const [selectedStock, setSelectedStock] = useState(Object.keys(sampleOrderBookData)[0]);
+  const [selectedStock, setSelectedStock] = useState(Object.keys(SampleOrderBookData)[0]);
 
   const handleStockChange = (event) => {
     setSelectedStock(event.target.value);
   };
 
-  const stockData = sampleOrderBookData[selectedStock] || [];
+  const stockData = SampleOrderBookData[selectedStock] || [];
 
   return (
     <div className="order-book-widget">
@@ -18,7 +18,7 @@ const OrderBookWidget = () => {
 
       {/* Dropdown to select stock */}
       <select className="stock-selector" value={selectedStock} onChange={handleStockChange}>
-        {Object.keys(sampleOrderBookData).map((ticker) => (
+        {Object.keys(SampleOrderBookData).map((ticker) => (
           <option key={ticker} value={ticker}>
             {ticker}
           </option>
