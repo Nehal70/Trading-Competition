@@ -8,6 +8,8 @@ import EquitiesDashboard from "../widgets/EquityDashboard.js"
 import CurrentPositionWidget from "../widgets/CurrentPositionWidget.js";
 import Contestdash from "../widgets/Contestdash.js"
 import PnLWidget from "../widgets/PnLWidget.js";
+import RecentOrdersWidget from "../widgets/RecentOrdersWidget.js";
+import samplePnlData from "../SampleData/samplePnlData.json";
 
 const Dashboard = () => {
     
@@ -26,7 +28,15 @@ const Dashboard = () => {
       setMessage("Sorry, that's not the correct number.");
     }
     setIsSubmitted(true);
-  };
+    };
+
+    const handleStockClick = (stock) => {
+      setSelectedStock(stock);
+    };
+  
+    const filteredOrders = samplePnlData.filter(
+      (order) => order.ticker === selectedStock
+    );
 
     return (
       <div className="dashboard">
@@ -48,7 +58,8 @@ const Dashboard = () => {
               <Contestdash/>
             </div>
             <div className="widget total-pnl"><PnLWidget/></div>
-            <div className="widget recent-orders">Recent Orders</div>
+            <div className="widget recent-orders">Recent Orders
+              <RecentOrdersWidget orders={filteredOrders}/></div>
       </div>
     );
   };
