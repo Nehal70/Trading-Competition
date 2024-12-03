@@ -1,31 +1,44 @@
+/* Container Styles */
 .order-book-widget {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 10px;
-  background-color: #121212; /* Dark theme */
-  border: 1px solid #444;
-  border-radius: 5px;
   font-family: Arial, sans-serif;
-  color: #fff;
-  text-align: center;
+  padding: 20px;
+  background-color: #121212; /* Dark theme */
+  color: #ffffff; /* Text color */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 800px; /* Restrict maximum width */
+  margin: 0 auto; /* Center widget */
 }
 
+/* Title */
 .order-book-widget h1 {
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
+/* Stock Selector */
 .stock-selector {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
   border: 1px solid #444;
-  background-color: #1a1a1a;
-  color: #fff;
   border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #ffffff;
   outline: none;
-  text-align: left;
 }
+
+/* Price Levels Container */
+.price-levels {
+  max-height: 400px; /* Restrict height for scrolling */
+  overflow-y: auto;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #1a1a1a; /* Slightly lighter background */
+  padding: 10px;
+}
+
 
   
