@@ -10,12 +10,12 @@ import Contestdash from "../widgets/Contestdash.js"
 import PnLWidget from "../widgets/PnLWidget.js";
 import RecentOrdersWidget from "../widgets/RecentOrdersWidget.js";
 import samplePnlData from "../SampleData/samplePnlData.json";
-import BuyButton from "../widgets/BuyWidget.js";
+import BuyButton from "../widgets/BuySellWidget.js";
 
 const Dashboard = () => {
     
 
-    const [selectedStock, setSelectedStock] = useState(null);
+    const [selectedStock, setSelectedStock] = useState("NVDA");
     const [text, setText] = useState(""); // Store input value
     const [message, setMessage] = useState(""); // Store message to display
     const predefinedNumber = "12345"; // The number to match with
