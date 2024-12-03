@@ -2,16 +2,25 @@
     "AAPL": [
         {"price": 150, "buy_amount": 100, "sell_amount": 80},
         {"price": 151, "buy_amount": 90, "sell_amount": 85},
-        {"price": 152, "buy_amount": 80, "sell_amount": 90}
+        {"price": 152, "buy_amount": 80, "sell_amount": 90},
+        {"price": 153, "buy_amount": 70, "sell_amount": 95},
+        {"price": 154, "buy_amount": 120, "sell_amount": 75},
+        {"price": 155, "buy_amount": 110, "sell_amount": 65}
     ],
     "GOOG": [
         {"price": 2800, "buy_amount": 50, "sell_amount": 45},
         {"price": 2801, "buy_amount": 55, "sell_amount": 50},
-        {"price": 2802, "buy_amount": 60, "sell_amount": 55}
+        {"price": 2802, "buy_amount": 60, "sell_amount": 55},
+        {"price": 2803, "buy_amount": 65, "sell_amount": 60},
+        {"price": 2804, "buy_amount": 70, "sell_amount": 65},
+        {"price": 2805, "buy_amount": 75, "sell_amount": 70}
     ],
     "MSFT": [
         {"price": 300, "buy_amount": 200, "sell_amount": 180},
         {"price": 301, "buy_amount": 190, "sell_amount": 185},
-        {"price": 302, "buy_amount": 180, "sell_amount": 190}
+        {"price": 302, "buy_amount": 180, "sell_amount": 190},
+        {"price": 303, "buy_amount": 175, "sell_amount": 195},
+        {"price": 304, "buy_amount": 160, "sell_amount": 200},
+        {"price": 305, "buy_amount": 150, "sell_amount": 210}
     ]
 }
