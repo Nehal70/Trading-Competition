@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PriceLevelWidget from "../PriceLevelWidget.js"; // Your single price-level component
+import PriceLevelWidget from "./PriceLevelWidget.js"; // Your single price-level component
 import "./OrderBookWidget.css"; // CSS for the widget
 import sampleOrderBookData from "../SampleData/SampleOrderBookData.json"; // Import the JSON file
 
