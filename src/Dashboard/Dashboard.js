@@ -47,7 +47,7 @@ const Dashboard = () => {
                 {!isSubmitted && <KeyInput onSubmit={handleInputSubmit} />} {/* Conditionally render input */}
                 <p>{message}</p> {/* Display message based on the match */}
             </div>
-            <div className="widget chart"><ChartWidget/></div>
+            <div className="widget chart"><ChartWidget selectedStock={selectedStock}/></div>
             <div className="widget current-stock">
               <BuyButton selectedStock={selectedStock}></BuyButton>
             </div>

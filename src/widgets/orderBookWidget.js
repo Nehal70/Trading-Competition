@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PriceLevelWidget from "./PriceLevelWidget";
 import "./OrderBookWidget.css";
-import SampleOrderBookData from "../SampleData/SampleOrderBookData.json";
+import SampleOrderBookData from "../SampleData/sampleOrderBookData.json";
 
 const OrderBookWidget = () => {
   const [selectedStock, setSelectedStock] = useState(Object.keys(SampleOrderBookData)[0]);

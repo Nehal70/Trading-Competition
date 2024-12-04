@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import "./ChartWidget.css";
+import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
 
-const ChartWidget = () => {
+const ChartWidget = ({selectedStock}) => {
     const series= [{
         data: [{
             x: new Date(1538778600000),
@@ -246,13 +248,45 @@ const ChartWidget = () => {
         ]
     }]
 
+    const [seriesList, setSeriesList] = useState([]);
+
+    useEffect(() => {
+        const temp = [series];
+        const length = sampleStockWidgetData.length;
+        for(let i = 0;i<length-1;i++){
+            temp.push([{
+                data: series[0].data.map(entry => ({
+                    x: entry.x,
+                    y: entry.y.map(value => {
+                        const variation = (Math.random() - 0.5) * 50;
+                        return parseFloat((value + variation).toFixed(2));
+                    })
+                }))
+            }])
+        }
+        setSeriesList(temp);
+    }, [])
+
+    function getCorrectSeries(){
+        console.log(seriesList);
+        console.log("temp");
+        let out = "";
+        for(let i = 0;i<sampleStockWidgetData.length;i++){
+            if(sampleStockWidgetData[i].ticker == selectedStock){
+                out = seriesList[i];
+                break;
+            }
+        }
+        return out;
+    }
+
     const options= {
         chart: {
         type: 'candlestick',
         height: 350
         },
         title: {
-        text: 'CandleStick Chart',
+        text: selectedStock,
         align: 'left',
         style: {
             fontWeight: 'bold',
@@ -280,10 +314,13 @@ const ChartWidget = () => {
         }
         }
     }
+    if(seriesList.length == 0){
+        return;
+    }
 
     return (
         <div>
-           <ReactApexChart options={options} series={series} type="candlestick" height={350} />
+           <ReactApexChart options={options} series={getCorrectSeries()} type="candlestick" height={350} />
         </div>
     );
 }
