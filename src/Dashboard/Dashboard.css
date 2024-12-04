@@ -1,19 +1,23 @@
 /* For the entire scroll bar */
 ::-webkit-scrollbar {
   width: 8px; 
-  background-color: black; 
+  background-color: rgba(0, 0, 0, 0); 
 }
 
 /* For the scrollbar track */
 ::-webkit-scrollbar-track {
   background: rgb(36, 36, 36); /* Background of the scrollbar track */
   /*border-radius: 10px;  Rounded edges for the scrollbar track */
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 /* For the scrollbar thumb (scrolling handle) */
 ::-webkit-scrollbar-thumb {
   background-color: #444; /* Black scrollbar thumb */
   /*border-radius: ; Rounded edges for the scrollbar thumb */ 
+  border-radius: 15px;
 }
 
 /* For scrollbar on hover (optional) */

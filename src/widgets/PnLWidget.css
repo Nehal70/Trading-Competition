@@ -2,12 +2,12 @@
 .pnl-dashboard {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: #121212;
+  background-color: #000000;
   color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  max-width: 800px; /* Restrict max width */
-  height: 100%; /* Ensure consistent height */
+  max-width: 900px; /* Restrict max width */
+  height: 87%; /* Ensure consistent height */
   margin: 0 auto; /* Center the container */
   overflow: hidden; /* Prevent content overflow */
 }
@@ -17,7 +17,6 @@
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .total-pnl .positive {
@@ -32,15 +31,17 @@
 .pnl-table-container {
   overflow-x: auto; /* Allow horizontal scrolling if needed */
   overflow-y: auto; /* Allow vertical scrolling if needed */
+  height: 80%;
   border: 1px solid #333;
   border-radius: 10px;
   max-height: 500px; /* Restrict table height */
   padding: 15px;
-  background-color: #1a1a1a; /* Slightly lighter background for contrast */
+  background-color: #0c0c0c; /* Slightly lighter background for contrast */
 }
 
 /* Table Styles */
 .pnl-table {
+  height: 100%;
   width: 100%;
   border-collapse: collapse;
   text-align: center;
@@ -73,5 +74,7 @@
 .pnl-table .negative {
   color: #f44336; /* Red for loss */
 }
+
+
 
 
