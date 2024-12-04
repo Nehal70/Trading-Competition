@@ -4,6 +4,7 @@
     border-radius: 8px; /* Rounded edges for the outer container */
     font-family: Arial, sans-serif; /* Clean font */
     color: white; /* Default text color */
+    overflow-x: hidden;
     max-height: calc(100vh - 150px); /* Ensure the widget fits within the screen, adjust '150px' based on your layout */
     overflow-y: auto; /* Enable scrolling for overflow */
     display: flex; /* Use flex layout to align content */
@@ -13,7 +14,7 @@
 
 /* Table Styling */
 .recent-orders table {
-    width: 95%; /* Expand table width to take up most of the container */
+    width: 100%; /* Expand table width to take up most of the container */
     margin: 0 auto; /* Center the table horizontally */
     border-collapse: collapse; /* Remove default spacing between table cells */
     background-color: #000; /* Black background for the table */
