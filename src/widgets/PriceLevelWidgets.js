@@ -1,5 +1,5 @@
 import React from "react";
-import "./PriceLevelWidget.css";
+import "./PriceLevelWidgets.css";
 
 const PriceLevelWidget = ({ price, buyAmount, sellAmount }) => {
   return (

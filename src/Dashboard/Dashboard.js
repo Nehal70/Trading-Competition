@@ -11,7 +11,7 @@ import PnLWidget from "../widgets/PnLWidget.js";
 import RecentOrdersWidget from "../widgets/RecentOrdersWidget.js";
 import samplePnlData from "../SampleData/samplePnlData.json";
 import BuyButton from "../widgets/BuySellWidget.js";
-import OrderBookWidget from "../widgets/OrderBookWidget.js";
+import OrderBookWidget from "../widgets/OrderBookWidgetss.js";
 
 const Dashboard = () => {
     

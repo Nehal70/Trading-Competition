@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contestdash.css';
-import SampleAnnouncements from '../SampleData/sampleAnnouncements.json';
+import SampleAnnouncements from '../SampleData/SampleAnnouncementss.json';
 import Announcement from './Announcement.js';
 
 const Contestdash = () => {
