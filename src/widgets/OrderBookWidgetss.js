@@ -1,51 +1,53 @@
-import React, { useState } from "react";
+import React from "react";
 import PriceLevelWidget from "./PriceLevelWidgets";
 import "./OrderBookWidgets.css";
 import SampleOrderBookData from "../SampleData/SampleOrderBookDatas.json";
 
-const OrderBookWidget = () => {
-  const [selectedStock, setSelectedStock] = useState(Object.keys(SampleOrderBookData)[0]);
+const OrderBookWidget = ({ selectedStock }) => {
+  // Find the matching data for the selected ticker
+  const stockData = SampleOrderBookData.find(
+    (item) => item.Ticker === selectedStock
+  );
 
-  const handleStockChange = (event) => {
-    setSelectedStock(event.target.value);
-  };
+  // Destructure Bids/Asks, default to empty arrays if undefined
+  const { Bids = [], Asks = [] } = stockData || {};
 
-  const stockData = SampleOrderBookData[selectedStock] || [];
+  // Sort bids high->low, asks low->high
+  const sortedBids = [...Bids].sort((a, b) => b.P - a.P);
+  const sortedAsks = [...Asks].sort((a, b) => a.P - b.P);
 
   return (
     <div className="order-book-widget">
-      <h1>Order Book</h1>
+      <h1>Order Book for {selectedStock}</h1>
 
-      {/* Dropdown to select stock */}
-      <select className="stock-selector" value={selectedStock} onChange={handleStockChange}>
-        {Object.keys(SampleOrderBookData).map((ticker) => (
-          <option key={ticker} value={ticker}>
-            {ticker}
-          </option>
-        ))}
-      </select>
-
-      {/* Header Row */}
-      <div className="price-level-header">
+      {/* Column Headers: Price, Quantity, Orders */}
+      <div className="column-headers">
         <span className="header price-header">Price</span>
-        <span className="header buy-header">Buy</span>
-        <span className="header sell-header">Sell</span>
+        <span className="header quantity-header">Quantity</span>
+        <span className="header orders-header">Orders</span>
       </div>
 
-      {/* Render Price Levels */}
-      <div className="price-levels">
-        {stockData.map((level, index) => (
-          <PriceLevelWidget
-            key={index}
-            price={level.price}
-            buyAmount={level.buy_amount}
-            sellAmount={level.sell_amount}
-          />
-        ))}
-      </div>
+      {/* Bids first (top of the list) */}
+      {sortedBids.map((bid, index) => (
+        <PriceLevelWidget
+          key={index}
+          price={bid.P}
+          quantity={bid.Q}
+          orders="-" // Filler for now
+        />
+      ))}
+
+      {/* Asks next (bottom of the list) */}
+      {sortedAsks.map((ask, index) => (
+        <PriceLevelWidget
+          key={index}
+          price={ask.P}
+          quantity={ask.Q}
+          orders="-" // Filler for now
+        />
+      ))}
     </div>
   );
 };
 
 export default OrderBookWidget;
-
