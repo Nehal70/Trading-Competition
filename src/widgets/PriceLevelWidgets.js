@@ -1,15 +1,14 @@
 import React from "react";
 import "./PriceLevelWidgets.css";
 
-const PriceLevelWidget = ({ price, buyAmount, sellAmount }) => {
+const PriceLevelWidget = ({ price, quantity, orders }) => {
   return (
     <div className="price-level-widget">
       <span className="price">{price}</span>
-      <span className="buy-amount">{buyAmount}</span>
-      <span className="sell-amount">{sellAmount}</span>
+      <span className="quantity">{quantity}</span>
+      <span className="orders">{orders}</span>
     </div>
   );
 };
 
 export default PriceLevelWidget;
-
