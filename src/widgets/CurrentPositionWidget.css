@@ -14,7 +14,7 @@
 
 
 .position-widget {
-    width: 40%;/* splits box up */
+    width: 35%;/* splits box up but makes smaller*/
     height: calc(100%); /*gets rid of non space used by widget so we can add more if needed */         
     background-color: black;
     border-radius: 10px;
@@ -62,17 +62,17 @@
 
 /* Buy/Sell Widget */
 .buy-sell-widget {
-  width: 50%; /* Takes up the remaining half of the container */
-  height: calc(100%); /* Matches height of the parent container */
+  width: 60%; 
+  height: 90%; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
+  align-items: center; 
+  justify-content: center; 
   background-color: black;
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  gap: 10px; /* Space between elements */
+  gap: 10px; 
 }
 
 /* Dropdown Menu Styling */
@@ -89,7 +89,7 @@
 /* Buy and Sell Buttons */
 .buy-button,
 .sell-button {
-  width: 80%; /* Matches dropdown width */
+  width: 80%;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -100,19 +100,19 @@
 }
 
 .buy-button {
-  background-color: #2ea44f; /* Green */
+  background-color: #2ea44f; 
   color: white;
 }
 
 .buy-button:hover {
-  background-color: #22863a; /* Darker green */
+  background-color: #22863a; 
 }
 
 .sell-button {
-  background-color: #d73a49; /* Red */
+  background-color: #d73a49; 
   color: white;
 }
 
 .sell-button:hover {
-  background-color: #b5272c; /* Darker red */
+  background-color: #b5272c; 
 }
