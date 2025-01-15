@@ -25,11 +25,11 @@ const CurrentPositionWidget = ({ selectedStock }) => {
     const[amount, setAmount] = useState(100);
 
     const handleBuy = () => {
-        console.log('Buy order placed for ${selectedStock} with order type: ${orderType}')
+        console.log(`Buy order placed for ${selectedStock} shares of ${selectedStock} with order type: ${orderType}`)
     };
 
     const handleSell = () => {
-        console.log(`Sell order placed for ${selectedStock} with order type: ${orderType}`);
+        console.log(`Sell order placed for ${selectedStock} shares of ${selectedStock}  with order type: ${orderType}`);
     };
 
     return (
@@ -68,6 +68,13 @@ const CurrentPositionWidget = ({ selectedStock }) => {
                     <option value="limit">Limit</option>
                     <option value="stop">Stop</option>
                 </select>
+                <input
+                    type="number"
+                    className="quantity-input"
+                    value={amount}  // Display the current state value (default is 100)
+                    onChange={(e) => setAmount(Number(e.target.value))} // Update state as user types
+                    placeholder="Quantity"
+                />
                 <button className="buy-button" onClick={handleBuy}>
                        Buy {orderType.toUpperCase()}
                 </button>
