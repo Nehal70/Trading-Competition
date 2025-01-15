@@ -21,29 +21,69 @@ const CurrentPositionWidget = ({ selectedStock }) => {
         totalGainLoss = ((currentPrice - buyPrice) * quantity).toFixed(2); // Calculate total gain/loss and round to 2 decimal places
         pnlChange = totalGainLoss >= 0 ? 'pnL-positive' : 'pnL-negative';
     }
+    const[orderType, setOrderType] = useState('Market');
+    const[amount, setAmount] = useState(100);
+
+    const handleBuy = () => {
+        console.log(`Buy order placed for ${selectedStock} shares of ${selectedStock} with order type: ${orderType}`)
+    };
+
+    const handleSell = () => {
+        console.log(`Sell order placed for ${selectedStock} shares of ${selectedStock}  with order type: ${orderType}`);
+    };
 
     return (
-        <div className="position-widget">
-            <span className="ticker">{selectedStock != null ? selectedStock : "Select a Stock"}</span>
-            <table className="position-table">
-                <tr>
-                    <td>Current Price: </td>
-                    <td>{currentPrice}</td>
-                </tr>
-                <tr>
-                    <td>Buy Price: </td>
-                    <td>{buyPrice}</td>
-                </tr>
-                <tr>
-                    <td>Quantity: </td>
-                    <td>{quantity}</td>
-                </tr>
-                <tr>
-                    <td>Total PnL: </td>
-                    <td className={pnlChange}>{totalGainLoss}</td>
-                </tr>
-            </table>
+        <div className = "widget-container">
+
+            <div className="position-widget">
+                <span className="ticker">{selectedStock != null ? selectedStock : "Select a Stock"}</span>
+                <table className="position-table">
+                    <tr>
+                        <td>Current Price: </td>
+                        <td>{currentPrice}</td>
+                    </tr>
+                    <tr>
+                        <td>Buy Price: </td>
+                        <td>{buyPrice}</td>
+                    </tr>
+                    <tr>
+                        <td>Quantity: </td>
+                        <td>{quantity}</td>
+                    </tr>
+                    <tr>
+                        <td>Total PnL: </td>
+                        <td className={pnlChange}>{totalGainLoss}</td>
+                    </tr>
+                </table>
+            </div>
+
+            
+            <div className="buy-sell-widget">
+                <select
+                    className="order-type-dropdown"
+                    value={orderType}
+                    onChange={(e) => setOrderType(e.target.value)}
+                >
+                    <option value="market">Market</option>
+                    <option value="limit">Limit</option>
+                    <option value="stop">Stop</option>
+                </select>
+                <input
+                    type="number"
+                    className="quantity-input"
+                    value={amount}  // Display the current state value (default is 100)
+                    onChange={(e) => setAmount(Number(e.target.value))} // Update state as user types
+                    placeholder="Quantity"
+                />
+                <button className="buy-button" onClick={handleBuy}>
+                       Buy {orderType.toUpperCase()}
+                </button>
+                <button className="sell-button" onClick={handleSell}>
+                    Sell {orderType.toUpperCase()}
+                </button>
+            </div>.
         </div>
+        
     );
 };
 

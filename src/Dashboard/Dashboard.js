@@ -54,7 +54,7 @@ const Dashboard = () => {
             <div className="widget equities">
               <EquityDashboard selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>
             </div>
-            <div className="widget order-book"><OrderBookWidget/></div>
+            <div className="widget order-book"><OrderBookWidget selectedStock={selectedStock} orders={samplePnlData}/></div>
             <div className="widget position-info">
               <CurrentPositionWidget selectedStock={selectedStock}/>
             </div>
