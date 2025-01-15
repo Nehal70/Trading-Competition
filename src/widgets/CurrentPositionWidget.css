@@ -1,5 +1,6 @@
 .position-widget {
-    width: calc(100%);             
+    width: calc(50%);
+    height: calc(100%);          
     background-color: black;
     border-radius: 10px;
     padding: 10px;
@@ -10,6 +11,8 @@
     justify-content: center;
     align-items: flex-start;
     box-sizing: border-box;
+    line-height: 30px;
+    letter-spacing: 1px;
   }
 .ticker {
     font-size: 18px;
