@@ -3,9 +3,12 @@ import samplePnLData from "../SampleData/samplePnlData.json";
 import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
 import BuyWidget from "./BuyWidget.css";
 import { type } from '@testing-library/user-event/dist/type';
+import DataFinder from "../HelperClasses/DataFinder";
 
 const BuyButton = ({ selectedStock }) => {
-    const stock = sampleStockWidgetData.find(stock => stock.ticker === selectedStock);
+    //const stock = sampleStockWidgetData.find(stock => stock.ticker === selectedStock);
+    const stock = DataFinder.getDataMatch(sampleStockWidgetData, "ticker", selectedStock)
+    
     const price = stock.price;
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });

@@ -1,9 +1,11 @@
 import React from 'react'
 import "./StockWidget.css";
 import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
+import DataHelper from '../HelperClasses/DataFinder';
 
 const StockWidget = ({ ticker }) => {
-  const stock = sampleStockWidgetData.find(stock => stock.ticker === ticker);
+  
+  const stock = DataHelper.getStockInfo(ticker);
 
   if (!stock) {
     return <div>Stock not found</div>; 
