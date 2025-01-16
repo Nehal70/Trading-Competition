@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
 import samplePnlData from "../SampleData/samplePnlData.json";
 import "./CurrentPositionWidget.css";
+import DataHelper from '../HelperClasses/DataFinder';
 
 const CurrentPositionWidget = ({ selectedStock }) => {
-    const stock = sampleStockWidgetData.find(stock => stock.ticker === selectedStock);
+    const stock = DataHelper.getStockInfo(selectedStock);
     const stockPosition = samplePnlData.find(position => position.ticker === selectedStock);
 
     let currentPrice = "N/A";
