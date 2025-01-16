@@ -2,12 +2,11 @@ import React from "react";
 import PriceLevelWidget from "./PriceLevelWidgets";
 import "./OrderBookWidgets.css";
 import SampleOrderBookData from "../SampleData/SampleOrderBookDatas.json";
+import DataFinder from "../HelperClasses/DataFinder";
 
 const OrderBookWidget = ({ selectedStock }) => {
   // Find the matching data for the selected ticker
-  const stockData = SampleOrderBookData.find(
-    (item) => item.Ticker === selectedStock
-  );
+  const stockData = DataFinder.getStockOrders(selectedStock);
 
   // Destructure Bids/Asks, default to empty arrays if undefined
   const { Bids = [], Asks = [] } = stockData || {};
