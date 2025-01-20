@@ -67,7 +67,7 @@ const CurrentPositionWidget = ({ selectedStock }) => {
                 <input
                     type="number"
                     className="quantity-input"
-                    value={amount}  // Display the current state value (default is 100)
+                    value={amount}  // Display the current state value (default is 10)
                     onChange={(e) => setAmount(Number(e.target.value))} // Update state as user types
                     placeholder="Quantity"
                 />
