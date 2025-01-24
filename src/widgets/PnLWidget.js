@@ -42,7 +42,7 @@ const PnLDashBoard = () => {
     <div className="pnl-dashboard">
       {/* Display Total PnL */}
       <div className="total-pnl">
-        <strong>Total PnL: </strong>
+        <strong>Total Realized PnL: </strong>
         <span className={totalPnl >= 0 ? "positive" : "negative"}>
           ${totalPnl.toFixed(2)}
         </span>
@@ -57,7 +57,6 @@ const PnLDashBoard = () => {
               <th>Ticker</th>
               <th>Action</th>
               <th>Trade Price</th>
-              <th>Market Price</th>
               <th>Quantity</th>
               <th>PnL</th>
             </tr>
@@ -72,7 +71,6 @@ const PnLDashBoard = () => {
                   <td>{trade.ticker}</td>
                   <td>{trade.is_buy ? "Buy" : "Sell"}</td>
                   <td>${trade.price.toFixed(2)}</td>
-                  <td>${marketData ? marketData.price.toFixed(2) : "N/A"}</td>
                   <td>{trade.quantity}</td>
                   <td className={trade.pnl >= 0 ? "positive" : "negative"}>
                     ${trade.pnl}
