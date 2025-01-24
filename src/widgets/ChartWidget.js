@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import "./ChartWidget.css";
 import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
+import DataHelper from "../HelperClasses/DataFinder";
 
 const ChartWidget = ({selectedStock}) => {
+    //Block comment code is for generating hard coded random data, ignore for implementation
+    /** 
     const series= [{
         data: [{
             x: new Date(1538778600000),
@@ -279,6 +282,7 @@ const ChartWidget = ({selectedStock}) => {
         }
         return out;
     }
+    */
 
     const options= {
         chart: {
@@ -314,13 +318,14 @@ const ChartWidget = ({selectedStock}) => {
         }
         }
     }
+    /** 
     if(seriesList.length == 0){
         return;
     }
-
+    */
     return (
         <div>
-           <ReactApexChart options={options} series={getCorrectSeries()} type="candlestick" height={350} />
+           <ReactApexChart options={options} series={DataHelper.getCandleStickInfo(selectedStock, 5)} type="candlestick" height={350} />
         </div>
     );
 }

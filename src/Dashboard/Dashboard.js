@@ -12,6 +12,7 @@ import RecentOrdersWidget from "../widgets/RecentOrdersWidget.js";
 import samplePnlData from "../SampleData/samplePnlData.json";
 import BuyButton from "../widgets/BuySellWidget.js";
 import OrderBookWidget from "../widgets/OrderBookWidgetss.js";
+import DataFinder from "../HelperClasses/DataFinder";
 
 const Dashboard = () => {
     
@@ -23,22 +24,36 @@ const Dashboard = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleInputSubmit = (data) => {
-    setText(data); 
+      setText(data); 
+      let outputMSG = ""; // Use 'let' for reassignment
+      let result = false; // Use 'let' for reassignment
+  
+      // Proper destructuring for object
+      [outputMSG, result] = DataFinder.initializeKey(data);
+      // Process result
+      if (result) {
+          setMessage(outputMSG);
+          setIsSubmitted(true);
+      } else {
+          setMessage(outputMSG);
+          setIsSubmitted(true);
+      }
+    /** 
     if (data === predefinedNumber) {
       setMessage("John Doe | GATech | #001");
     } else {
       setMessage("Sorry, that's not the correct number.");
     }
     setIsSubmitted(true);
+    */
     };
 
     const handleStockClick = (stock) => {
       setSelectedStock(stock);
     };
   
-    const filteredOrders = samplePnlData.filter(
-      (order) => order.ticker === selectedStock
-    );
+    //const filteredOrders = samplePnlData.filter((order) => order.ticker === selectedStock);
+    const filteredOrders = DataFinder.getDataFilter(samplePnlData, 'ticker', selectedStock);
 
     return (
       <div className="dashboard">

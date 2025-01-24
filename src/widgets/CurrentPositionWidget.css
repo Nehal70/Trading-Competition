@@ -82,6 +82,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  text-align: center;
   background-color: white;
   cursor: pointer;
 }
@@ -93,6 +94,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
+  text-align: center;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -117,7 +119,7 @@
   background-color: #b5272c; 
 }
 
-.quantity-input {
+.quantity-input{
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -129,8 +131,21 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
 }
+.price-input {
+  width: 75%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
 
-.quantity-input:focus {
+.quantity-input:focus,
+.price-input:focus {
   outline: none;
   border-color: #2ea44f;
   box-shadow: 0 0 5px rgba(46, 164, 79, 0.5);

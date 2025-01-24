@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 import "./PnLWidget.css";
 import samplePnLData from "../SampleData/samplePnlData.json";
 import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
+import DataFinder from "../HelperClasses/DataFinder";
 
 const PnLDashBoard = () => {
 
     
     const calculatePnL = () => { // Function to calculate PnL for each trade
       // Iterate over user trades
-      const pnlResults = samplePnLData.map(trade => {
+      const pnlResults = DataFinder.getPositionData("12345").map(trade => {
         // Find the matching market price for the trade's ticker compare those to
-        const marketData = sampleStockWidgetData.find(stock => stock.ticker === trade.ticker);
+        const marketData = DataFinder.getStockInfo(trade.ticker);
   
         if (!marketData) {
           console.warn(`Market data not found for ticker: ${trade.ticker}`);
@@ -65,9 +66,7 @@ const PnLDashBoard = () => {
           {/* Table Body */}
           <tbody>
             {pnlData.map((trade, index) => {
-              const marketData = sampleStockWidgetData.find(
-                (stock) => stock.ticker === trade.ticker
-              );
+              const marketData = DataFinder.getStockInfo(trade.ticker);
               return (
                 <tr key={index}>
                   <td>{trade.ticker}</td>

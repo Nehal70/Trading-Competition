@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
 import "../Dashboard/Dashboard.css";
 import StockWidget from "./StockWidget.js";
+import DataHelper from '../HelperClasses/DataFinder';
 
 const EquitiesDashboard = ({ selectedStock, setSelectedStock }) => {
 
@@ -11,7 +12,7 @@ const EquitiesDashboard = ({ selectedStock, setSelectedStock }) => {
       setSelectedStock(ticker);
     }
 
-    const allTickers = sampleStockWidgetData.map(stock => stock.ticker);
+    const allTickers = DataHelper.getAllStocks().map(stock => stock.ticker);
     return (
         <>
          {allTickers.map(stock => (

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import sampleStockWidgetData from "../SampleData/sampleStockWidgetData.json";
 import samplePnlData from "../SampleData/samplePnlData.json";
 import "./CurrentPositionWidget.css";
+import DataHelper from '../HelperClasses/DataFinder';
 
 const CurrentPositionWidget = ({ selectedStock }) => {
-    const stock = sampleStockWidgetData.find(stock => stock.ticker === selectedStock);
+    const stock = DataHelper.getStockInfo(selectedStock);
     const stockPosition = samplePnlData.find(position => position.ticker === selectedStock);
 
     let currentPrice = "N/A";
@@ -21,17 +21,22 @@ const CurrentPositionWidget = ({ selectedStock }) => {
         totalGainLoss = ((currentPrice - buyPrice) * quantity).toFixed(2); // Calculate total gain/loss and round to 2 decimal places
         pnlChange = totalGainLoss >= 0 ? 'pnL-positive' : 'pnL-negative';
     }
-    const[orderType, setOrderType] = useState('Market');
-    const[amount, setAmount] = useState(100);
+    const[price, setPrice] = useState('');
+    const[amount, setAmount] = useState(10);
 
     const handleBuy = () => {
-        console.log(`Buy order placed for ${selectedStock} shares of ${selectedStock} with order type: ${orderType}`)
+        const orderType = (!price || Number(price) === 0) ? "Market" : `Limit (Price:  + ${price})`;
+        console.log(
+            `Buy order placed for ${amount} shares of ${selectedStock}  at a price of ${price} with order type: ${orderType}.`
+        );
     };
 
     const handleSell = () => {
-        console.log(`Sell order placed for ${selectedStock} shares of ${selectedStock}  with order type: ${orderType}`);
-    };
-
+        const orderType = price === (!price || Number(price) === 0) ? "Market" : `Limit (Price: ${price})`;
+        console.log(
+            `Sell order placed for ${amount} shares of ${selectedStock} at a price of ${price} with order type: ${orderType} order.`
+        );
+    }
     return (
         <div className = "widget-container">
 
@@ -59,27 +64,25 @@ const CurrentPositionWidget = ({ selectedStock }) => {
 
             
             <div className="buy-sell-widget">
-                <select
-                    className="order-type-dropdown"
-                    value={orderType}
-                    onChange={(e) => setOrderType(e.target.value)}
-                >
-                    <option value="market">Market</option>
-                    <option value="limit">Limit</option>
-                    <option value="stop">Stop</option>
-                </select>
                 <input
                     type="number"
                     className="quantity-input"
-                    value={amount}  // Display the current state value (default is 100)
+                    value={amount}  // Display the current state value (default is 10)
                     onChange={(e) => setAmount(Number(e.target.value))} // Update state as user types
                     placeholder="Quantity"
                 />
+                <input
+                    type="number"
+                    className="price-input"
+                    value={price}  // Display the current state value
+                    onChange={(e) => setPrice(Number(e.target.value))} // Update state as user types
+                    placeholder="Enter Price(If Blank Market Order)"
+                />
                 <button className="buy-button" onClick={handleBuy}>
-                       Buy {orderType.toUpperCase()}
+                    Buy {!price || Number(price) === 0 ? "Market" : `Limit (${price})`}
                 </button>
                 <button className="sell-button" onClick={handleSell}>
-                    Sell {orderType.toUpperCase()}
+                    Sell {!price || Number(price) === 0  ? "Market" : `Limit (${price})`}
                 </button>
             </div>.
         </div>
