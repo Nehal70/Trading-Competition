@@ -6,7 +6,7 @@
   color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  max-width: 900px; /* Restrict max width */
+  max-width: 500px; /* Restrict max width */
   height: 87%; /* Ensure consistent height */
   margin: 0 auto; /* Center the container */
   overflow: hidden; /* Prevent content overflow */
@@ -49,17 +49,21 @@
 
 .pnl-table th,
 .pnl-table td {
-  padding: 10px;
+  padding: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-bottom: 1px solid #444;
 }
 
 .pnl-table th {
   text-align: center;
   font-weight: bold;
+  font-size: 16px;
 }
 
 .pnl-table td {
   font-size: 14px;
+  font-weight: normal;
 }
 
 .pnl-table tr:hover {
