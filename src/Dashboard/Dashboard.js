@@ -24,6 +24,7 @@ const Dashboard = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleInputSubmit = (data) => {
+        console.log(data);
       setText(data); 
       let outputMSG = ""; // Use 'let' for reassignment
       let result = false; // Use 'let' for reassignment
