@@ -1,13 +1,5 @@
 const URI = "";
 
-function formDataConvert(data) {
-    let output = new FormData();
-    for (const key in data) {
-        output.append(key, data[key]);
-    }
-    return output;
-}
-
 
 class AsyncAPICall {
     path;
@@ -34,12 +26,15 @@ class AsyncAPICall {
         if (this.dependency !== null) {
             await this.dependency.promise;
             for (const key in this.dependency.data) {
-                form.append(key, this.dependency.data[key]);
+                form[key] = this.dependency.data[key];
             }
         }
         let promise = fetch(URI + this.path, {
             method: "POST",
-            body: form
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form)
         })
             .then((data) => {
                 console.log(data.status);
@@ -63,22 +58,22 @@ let marketOrderObject = new AsyncAPICall("/market_order", buildupObject);
 
 export function buildupHandler(data, subscriber) {
     buildupObject.setSubscriber(subscriber);
-    buildupObject.request(formDataConvert(data));
+    buildupObject.request(data);
 }
 
 export function teardownHandler(data, subscriber) {
     teardownObject.setSubscriber(subscriber);
-    teardownObject.request(formDataConvert(data));
+    teardownObject.request(data);
 }
 
 export function limitOrderHandler(data, subscriber) {
     limitOrderObject.setSubscriber(subscriber);
-    limitOrderObject.request(formDataConvert(data));
+    limitOrderObject.request(data);
 }
 
 export function marketOrderHandler(data, subscriber) {
     marketOrderObject.setSubscriber(subscriber);
-    marketOrderObject.request(formDataConvert(data));
+    marketOrderObject.request(data);
 }
 
 export function getBuildupData() {
