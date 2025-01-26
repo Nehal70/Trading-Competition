@@ -13,6 +13,7 @@ import samplePnlData from "../SampleData/samplePnlData.json";
 import BuyButton from "../widgets/BuySellWidget.js";
 import OrderBookWidget from "../widgets/OrderBookWidgetss.js";
 import DataFinder from "../HelperClasses/DataFinder";
+import AuctionWidget from "../widgets/AuctionWidget.js";
 
 const Dashboard = () => {
     
