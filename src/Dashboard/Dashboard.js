@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./Dashboard.css";
 import StockWidget from "../widgets/StockWidget.js"
-import KeyInput from "../widgets/KeyInput.js"
+import AuthenticationInput from "../widgets/AuthenticationInput.js"
 import EquityDashboard from "../widgets/EquityDashboard.js" 
 import ChartWidget from '../widgets/ChartWidget.js';
 import EquitiesDashboard from "../widgets/EquityDashboard.js" 
@@ -24,7 +24,9 @@ const Dashboard = () => {
     const predefinedNumber = "12345"; // The number to match with
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    // moved all logic to AuthenticationInput.js
     const handleInputSubmit = (data) => {
+      console.log(data);
       setText(data); 
       let outputMSG = ""; // Use 'let' for reassignment
       let result = false; // Use 'let' for reassignment
@@ -60,7 +62,7 @@ const Dashboard = () => {
       <div className="dashboard">
             <div className="widget user-info">
                 User Authentication
-                {!isSubmitted && <KeyInput onSubmit={handleInputSubmit} />} {/* Conditionally render input */}
+                {!isSubmitted && <AuthenticationInput />} {/* Conditionally render input */}
                 <p>{message}</p> {/* Display message based on the match */}
             </div>
             <div className="widget chart"><ChartWidget selectedStock={selectedStock}/></div>
